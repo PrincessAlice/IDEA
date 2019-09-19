@@ -17,11 +17,21 @@ public class Card {
 
     //很重要的方法
     @Override
-    public int equals(){
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if(obj == null){
+            return false;
+        }
 
+        //if(obj.getClass()== this.getClass()){}
+        if(!(obj instanceof  Card)){
+            return false;
+        }
+
+        Card c=(Card)obj;
+        return value == c.value && color.equals(c.color);
     }
-
-
-
 
 }
