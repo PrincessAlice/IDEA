@@ -1,0 +1,48 @@
+create table student(
+	sn int not null,
+	name varchar(20)
+);
+
+
+drop table if exists student;
+create table student(
+	sn int not null,
+    name varchar(20)defualte '不知道'
+);
+
+
+insert into student value(1,'s1');
+
+insert into student(sn) values(null);
+
+//创建表，并进行关联  创建一条班级数据对应多条学生数据
+//关联：foreign key (classes_id) references classes(id)
+
+create table classes(
+	id int primary key auto_increment,
+	name varchar(20)
+);
+
+//创建学生表
+drop table if exists student;
+create table student(
+	id int primary key,
+	sn int unique,
+    name varchar(20)defualte '不知道',
+	classes_id int,
+	foreign key (classes_id) references classes(id)
+);
+
+insert into student(sn,name) values(23,'s1');
+insert into syudent(sn,name) values(24,'s1');
+
+
+//1.写一个学生和老师的关系：多对多
+
+//班级、学生(java写法)
+class Clasaes{
+	List<Student> student;
+}
+
+
+
