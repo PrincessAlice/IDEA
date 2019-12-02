@@ -4,7 +4,7 @@ public class StopThread {
 
 
     private static volatile boolean myInterrupted;
-    //volatile 专用于多线程，严谨的写法
+    //volatile 专用于多线程，严谨的写法  保证多线程线程的可见性、顺序性
 
     //线程是否被中断，默认为TRUE
 

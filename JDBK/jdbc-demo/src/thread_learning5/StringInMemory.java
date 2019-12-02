@@ -6,7 +6,7 @@ public class StringInMemory {
         String s2 = "hel";
         String s3 = new String("hello");
         String s4 = "lo";
-        String s5 = s3+s4;
+        String s5 = s2+s4;
         String s6 = "hello";
         System.out.println(s1 == s6);  //相等
         System.out.println(s1 == s3.intern());  //intern 返回变量值  相等
