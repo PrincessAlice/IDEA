@@ -1,78 +1,41 @@
-class Node{
-    int val;
-    Node next = null;
-    Node (int val){
-        this.val = val;
-    }
+package OneDayPractice;
 
-    @Override
-    public String toString() {
-        return "Node{" + "val=" + val +'}';
-    }
-}
 
-public class Test2 {
-    private static Node compersion(Node head,int x){
-        Node cur = head;
-        Node small = null;
-        Node big = null;
-        Node sLast = null;
-        Node bLast = null;
-        while(cur!=null){
-            if(cur.val < x){
-                if(small == null){
-                    small = cur;
-                }else{
-                    sLast.next = cur;
-                }
-                sLast = cur;
-            }else{
-                if(big == null){
-                    big = cur;
-                }else{
-                    bLast.next = cur;
-                }
-                bLast = cur;
+import java.util.Scanner;
+
+public class test2 {
+    public static boolean isHuiWen(String str) {
+        int i = 0;
+        int j = str.length() - 1;
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
             }
-            cur = cur.next;
+            i++;
+            j--;
         }
-
-        if(sLast == null){
-            return big;
-        }else{
-            sLast.next = big;
-        }
-
-        if(bLast == null){
-            return small;
-        }else{
-            bLast.next = null;
-        }
-
-        return small;
+        return true;
     }
 
-    private static Node createList(){
-        Node n1 = new Node(2);
-        Node n2 = new Node(5);
-        Node n3 = new Node(2);
-        Node n4 = new Node(8);
-        Node n5 = new Node(6);
-        Node n6 = new Node(7);
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
-        n5.next = n6;
-        return n1;
-
+    public static int number(String a, String b) {
+        int count = 0;
+        int len = a.length();
+        for (int i = 0; i <= len; i++) {
+            String str = a.substring(0, i) + b + a.substring(i, len);
+            if (isHuiWen(str)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-        Node cur = createList();
-        Node rhead = compersion(cur,6);
-        for(Node c =rhead;c!=null;c=c.next){
-            System.out.println(c);
+        Scanner s = new Scanner(System.in);
+        while (s.hasNext()) {
+            String a = s.next();
+            String b = s.next();
+            System.out.println(number(a, b));
         }
     }
+
 }
