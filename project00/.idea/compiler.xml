@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="maven-web" />
+        <module name="servlet-blog" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-web" target="1.5" />
+      <module name="maven-web" target="1.8" />
+      <module name="servlet-blog" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
