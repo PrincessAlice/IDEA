@@ -1,0 +1,41 @@
+package com.skd;
+
+import java.util.Scanner;
+
+public class InOutTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		for(int i =0;i<3;i++) {
+			
+			System.out.println("i love you");
+			
+		}
+		
+		System.out.println("*****************************************");
+		for(int i =1;i<=5;i++) {
+			for(int j = 1;j<=5;j++) {
+				System.out.print(i+"---"+j+'\t');
+			}
+		}
+		
+		System.out.println("*****************************************");
+		for(int i =1;i<=5;i++) {
+			for(int j = 1;j<=5;j++) {
+				System.out.print("*");
+			}
+		}
+		
+		
+	}
+	
+	public static void fun2() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("请输入一个物品的名字：");
+		String name = scanner.next();
+		System.out.println("您选的是："+name);
+	}
+
+}
